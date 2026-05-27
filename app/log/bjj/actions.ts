@@ -16,6 +16,19 @@ export interface BjjPayload {
   rpe: number | null;
   notes: string;
   orb_summary: string;
+  // ORB Sport fields
+  avg_hr: number | null;
+  max_hr: number | null;
+  min_hr: number | null;
+  calories: number | null;
+  workload: number | null;
+  most_active_zone: number | null;
+  zone_restorative_sec: number | null;
+  zone_1_sec: number | null;
+  zone_2_sec: number | null;
+  zone_3_sec: number | null;
+  zone_4_sec: number | null;
+  zone_5_sec: number | null;
 }
 
 export async function submitBjjSession(p: BjjPayload) {
@@ -57,6 +70,18 @@ export async function submitBjjSession(p: BjjPayload) {
     rpe: p.rpe,
     notes: p.notes || null,
     orb_summary: p.orb_summary || null,
+    avg_hr: p.avg_hr,
+    max_hr: p.max_hr,
+    min_hr: p.min_hr,
+    calories: p.calories,
+    workload: p.workload,
+    most_active_zone: p.most_active_zone,
+    zone_restorative_sec: p.zone_restorative_sec,
+    zone_1_sec: p.zone_1_sec,
+    zone_2_sec: p.zone_2_sec,
+    zone_3_sec: p.zone_3_sec,
+    zone_4_sec: p.zone_4_sec,
+    zone_5_sec: p.zone_5_sec,
   });
   if (bErr) throw new Error(bErr.message);
 

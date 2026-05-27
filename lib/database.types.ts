@@ -77,6 +77,19 @@ export interface BjjSession {
   rpe: number | null;
   notes: string | null;
   orb_summary: string | null;
+  // ORB Sport heart-rate & workload fields (migration 003)
+  avg_hr: number | null;
+  max_hr: number | null;
+  min_hr: number | null;
+  calories: number | null;
+  workload: number | null;
+  most_active_zone: number | null;   // 1–5
+  zone_restorative_sec: number | null;
+  zone_1_sec: number | null;
+  zone_2_sec: number | null;
+  zone_3_sec: number | null;
+  zone_4_sec: number | null;
+  zone_5_sec: number | null;
 }
 
 export interface CardioSession {
