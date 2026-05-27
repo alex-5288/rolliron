@@ -4,15 +4,9 @@ const nextConfig = {
   experimental: {
     serverActions: { bodySizeLimit: '2mb' },
   },
-  webpack: (config) => {
-    // Polyfill __dirname / __filename for CJS packages (e.g. @supabase)
-    // that reference them inside webpack bundles compiled as ESM.
-    config.node = {
-      __dirname: true,
-      __filename: true,
-    };
-    return config;
-  },
+  // Next.js 16 uses Turbopack by default. No custom config needed —
+  // Turbopack handles CJS modules (including __dirname) natively.
+  turbopack: {},
 };
 
 module.exports = nextConfig;
